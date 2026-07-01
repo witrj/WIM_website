@@ -403,15 +403,47 @@
       <h2>Ready to grow?</h2>
       <p>Contact me for a 20- or 30-minute introductory conversation.</p>
     </div>
-    <form onsubmit="event.preventDefault(); alert('Thanks — this form needs to be connected to an email service (e.g. Netlify Forms) before it will actually send.');">
-      <div class="field"><label for="name">Name</label><input id="name" type="text" required></div>
-      <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
-      <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
-      <div class="field"><label for="message">What's going on with your marketing right now?</label><textarea id="message"></textarea></div>
+    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="position:absolute; left:-9999px;">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </p>
+      <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+      <div class="field"><label for="company">Company</label><input id="company" name="company" type="text"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="message">What's going on with your marketing right now?</label><textarea id="message" name="message"></textarea></div>
       <button class="btn-submit" type="submit">Contact Me</button>
+      <p id="formStatus" style="display:none; font-size:14px; color:var(--navy); margin:4px 0 0;"></p>
     </form>
   </div>
 </section>
+
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+        .then(() => {
+          contactForm.reset();
+          contactForm.querySelectorAll('.field, .btn-submit').forEach(el => el.style.display = 'none');
+          formStatus.style.display = 'block';
+          formStatus.textContent = "Thanks — I'll be in touch shortly.";
+        })
+        .catch(() => {
+          formStatus.style.display = 'block';
+          formStatus.style.color = '#a8481c';
+          formStatus.textContent = "Something went wrong sending that — feel free to email rich@witmer.marketing directly.";
+        });
+    });
+  }
+</script>
 
 <footer>
   <div class="wrap footer-inner">
