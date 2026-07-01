@@ -168,7 +168,7 @@
   }
   .service h3{font-family:var(--display); font-size:19px; font-weight:700; color:var(--navy); margin:0 0 8px;}
   .service p{margin:0; font-size:14.5px; color:var(--muted); line-height:1.6;}
-  @media (max-width:800px){ .services{grid-template-columns:1fr;} }
+  @media (max-width:800px){ .services{grid-template-columns:1fr;} .services .service[aria-hidden="true"]{display:none;} }
 
   /* ---------- achievements ---------- */
   .achieve-list{display:grid; gap:0; border-top:1px solid var(--line);}
@@ -370,6 +370,7 @@
         <h3>Team &amp; Agency Management</h3>
         <p>Lead, develop, or rationalize your marketing team. Manage agency relationships, vendors, and freelancers to ensure cohesive execution and measurable ROI across all resources.</p>
       </div>
+      <div class="service" aria-hidden="true"></div>
     </div>
   </div>
 </section>
