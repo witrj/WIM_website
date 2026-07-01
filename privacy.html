@@ -27,6 +27,7 @@
   h2{font-family:var(--display); font-size:20px; color:var(--navy); margin:36px 0 10px;}
   p, li{color:#33404d; font-size:15.5px;}
   footer{background:var(--navy); color:#B9C4D1; padding:26px 0; font-size:12.5px;}
+  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; max-width:1120px; margin:0 auto;}
 </style>
 </head>
 <body>
@@ -57,7 +58,12 @@
   <p>Questions about this policy can be sent to <a href="mailto:rich@witmer.marketing">rich@witmer.marketing</a>.</p>
 </main>
 <footer>
-  <div class="wrap" style="max-width:1120px; margin:0 auto;">© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
+  <div class="wrap" style="max-width:1120px; margin:0 auto;">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
+      <div>Fractional CMO Services</div>
+    </div>
+  </div>
 </footer>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

@@ -27,6 +27,7 @@
   .btn{display:inline-block; background:var(--navy); color:#fff; text-decoration:none; font-size:14px; font-weight:600; padding:13px 26px; border-radius:999px;}
   .btn:hover{background:var(--gold);}
   footer{background:var(--navy); color:#B9C4D1; padding:26px 0; font-size:12.5px;}
+  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
 </head>
 <body>
@@ -39,11 +40,15 @@
 <main class="wrap">
   <div class="eyebrow">Case Studies</div>
   <h1>Detailed case studies are on the way.</h1>
-  <p>In the meantime, a handful of results are outlined on the home page — and I'm happy to walk through the full story behind any of them on a call.</p>
-  <a class="btn" href="index.html#contact-form">Let's talk</a>
+  <p>In the meantime, a handful of results are outlined on the home page — and I'm happy to walk through the full story behind any of them.</p>
+  <a class="btn" href="index.html#contact-form" style="margin-bottom:60px; display:inline-block;">Let's talk</a>
 </main>
 <footer>
-  <div class="wrap">© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
+  <div class="wrap footer-inner">
+    <div>© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
+    <div>Fractional CMO Services</div>
+    <div><a href="privacy.html" style="color:inherit; text-decoration:underline; text-decoration-color:rgba(185,196,209,0.5);">Privacy Policy</a></div>
+  </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
