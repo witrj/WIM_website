@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Witmer Integrated Marketing — Fractional CMO</title>
+<meta name="description" content="Rich Witmer, Fractional CMO. 16+ years building marketing functions for industrial, manufacturing, SaaS, and distribution companies in transition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2545;
+    --ink:#12181F;
+    --paper:#EEF1F0;
+    --steel:#3E6D9C;
+    --rust:#C4571F;
+    --line: rgba(11,37,69,0.14);
+    --line-strong: rgba(11,37,69,0.28);
+    --white:#FFFFFF;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+
+  /* blueprint grid backdrop */
+  .grid-bg{
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* registration marks / corner ticks used as section framing */
+  .frame{
+    position:relative;
+    border-top:1px solid var(--line-strong);
+    border-bottom:1px solid var(--line-strong);
+  }
+  .frame::before, .frame::after{
+    content:"+";
+    position:absolute;
+    font-family:var(--mono);
+    color:var(--line-strong);
+    font-size:14px;
+    top:-8px;
+  }
+  .frame::before{left:20px;}
+  .frame::after{right:20px;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--steel);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--steel);
+    display:inline-block;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(238,241,240,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-strong);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:-0.01em;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .logo span{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--steel);
+    font-weight:400;
+    letter-spacing:.08em;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    margin:0;
+    padding:0;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.02em;
+  }
+  nav ul a{
+    text-decoration:none;
+    color:var(--ink);
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  nav ul a:hover{border-color:var(--rust); color:var(--rust);}
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:13px;
+    border:1px solid var(--ink);
+    padding:8px 16px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:background .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ink); color:var(--paper);}
+  .menu-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(34px, 4.6vw, 58px);
+    line-height:1.04;
+    letter-spacing:-0.02em;
+    margin:22px 0 20px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--steel);
+  }
+  .hero p.lede{
+    font-size:18px;
+    max-width:44ch;
+    color:#33404d;
+    margin:0 0 30px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--mono);
+    font-size:13.5px;
+    letter-spacing:.02em;
+    text-decoration:none;
+    padding:13px 22px;
+    display:inline-block;
+    border:1px solid var(--ink);
+    transition:background .2s ease, color .2s ease, transform .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--rust); border-color:var(--rust);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  /* signature: capacity dial */
+  .dial-card{
+    border:1px solid var(--line-strong);
+    background:var(--white);
+    padding:26px 24px 22px;
+    position:relative;
+  }
+  .dial-card .eyebrow{margin-bottom:18px;}
+  .dial-labels{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:10.5px;
+    color:#5c6b78;
+    margin-top:10px;
+  }
+  .dial-caption{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:#33404d;
+    margin-top:16px;
+    border-top:1px dashed var(--line-strong);
+    padding-top:14px;
+  }
+  .dial-caption b{color:var(--ink);}
+
+  /* ---------- section shared ---------- */
+  section{padding:80px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(26px,3vw,36px);
+    letter-spacing:-0.01em;
+    margin:10px 0 0;
+    max-width:22ch;
+  }
+  .section-num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:#8996a3;
+  }
+
+  /* ---------- services ---------- */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .service{
+    background:var(--paper);
+    padding:32px 30px;
+  }
+  .service .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--rust);
+    letter-spacing:.06em;
+  }
+  .service h3{
+    font-family:var(--display);
+    font-size:21px;
+    margin:12px 0 10px;
+    font-weight:600;
+  }
+  .service p{
+    color:#3c4a57;
+    font-size:15px;
+    margin:0;
+  }
+
+  /* ---------- proof / track record ---------- */
+  .proof{background:var(--navy); color:var(--paper);}
+  .proof .section-head h2{color:var(--paper);}
+  .proof .section-num{color:#7f97b2;}
+  .proof .eyebrow{color:#8fb4d9;}
+  .proof .eyebrow::before{background:#8fb4d9;}
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.15);
+  }
+  .stat{
+    background:var(--navy);
+    padding:28px 22px;
+  }
+  .stat .num{
+    font-family:var(--display);
+    font-size:clamp(28px,3.4vw,40px);
+    font-weight:700;
+    color:#fff;
+    letter-spacing:-0.01em;
+  }
+  .stat .label{
+    font-family:var(--mono);
+    font-size:12px;
+    color:#a9c1da;
+    margin-top:8px;
+    line-height:1.5;
+  }
+  .proof-note{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:#9db4cd;
+    margin-top:24px;
+    max-width:70ch;
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-photo{
+    aspect-ratio:4/5;
+    background:
+      repeating-linear-gradient(135deg, var(--white) 0 2px, #E4E8E6 2px 4px);
+    border:1px solid var(--line-strong);
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+  }
+  .about-photo .cap{
+    font-family:var(--mono);
+    font-size:11px;
+    background:var(--ink);
+    color:var(--paper);
+    padding:8px 12px;
+    margin:14px;
+  }
+  .about h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(24px,2.8vw,32px);
+    margin:0 0 18px;
+  }
+  .about p{color:#33404d; font-size:16px;}
+  .about ul{
+    list-style:none;
+    padding:0;
+    margin:24px 0 0;
+    display:grid;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  .about li{
+    display:flex;
+    gap:10px;
+    color:#33404d;
+  }
+  .about li::before{content:"—"; color:var(--steel);}
+
+  /* ---------- fit ---------- */
+  .fit{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .fit > div{
+    background:var(--paper);
+    padding:26px;
+  }
+  .fit h4{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin:0 0 10px;
+    color:var(--steel);
+  }
+  .fit .no h4{color:#a15a3a;}
+  .fit p{margin:0; font-size:14.5px; color:#3c4a57;}
+
+  /* ---------- contact ---------- */
+  .contact{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .contact-inner{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+  }
+  .contact h2{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(30px,4vw,46px);
+    line-height:1.08;
+    letter-spacing:-0.02em;
+    margin:16px 0 20px;
+  }
+  .contact p{color:#c7cfd6; max-width:46ch; font-size:16px;}
+  .contact .eyebrow{color:#8fb4d9;}
+  .contact .eyebrow::before{background:#8fb4d9;}
+
+  form{
+    display:grid;
+    gap:16px;
+  }
+  .field{
+    display:grid;
+    gap:6px;
+  }
+  label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:#9aa7b2;
+  }
+  input, textarea{
+    background:transparent;
+    border:1px solid #3a444d;
+    color:var(--paper);
+    font-family:var(--body);
+    font-size:15px;
+    padding:12px 14px;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  input:focus, textarea:focus{border-color:var(--rust);}
+  textarea{resize:vertical; min-height:100px;}
+  .submit-row{display:flex; align-items:center; gap:16px; margin-top:4px;}
+  .btn-submit{
+    font-family:var(--mono);
+    font-size:13.5px;
+    background:var(--rust);
+    color:#fff;
+    border:1px solid var(--rust);
+    padding:13px 24px;
+    cursor:pointer;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .btn-submit:hover{background:#a8481c; border-color:#a8481c;}
+  .direct{font-family:var(--mono); font-size:13px; color:#9aa7b2;}
+  .direct a{color:var(--paper); text-decoration:underline; text-decoration-color:#5c6b78;}
+
+  footer{
+    padding:26px 0;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:#7c8894;
+  }
+
+  @media (max-width:860px){
+    .hero-inner, .about, .contact-inner{grid-template-columns:1fr;}
+    .services, .stat-grid, .fit{grid-template-columns:1fr;}
+    nav ul{display:none;}
+    .nav-cta{padding:8px 12px; font-size:12px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">WITMER<span>INTEGRATED MARKETING LLC</span></div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#proof">Track Record</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#fit">Is This You</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#contact">Start a conversation</a>
+  </div>
+</header>
+
+<section class="hero grid-bg">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Fractional CMO — Houston, TX</div>
+      <h1>Marketing leadership, <em>sized to the job</em>, not the org chart.</h1>
+      <p class="lede">I build and run marketing functions for industrial, manufacturing, SaaS, and distribution companies — the strategy, the team, and the execution — without the overhead of a full-time hire you don't need yet.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Start a conversation</a>
+        <a class="btn btn-ghost" href="#services">See how engagements work</a>
+      </div>
+    </div>
+
+    <div class="dial-card">
+      <div class="eyebrow">Capacity, dialed in</div>
+      <svg viewBox="0 0 320 170" width="100%" role="img" aria-label="Dial showing marketing engagement levels from advisory to full-time, set to fractional">
+        <defs>
+          <clipPath id="dialClip"><path d="M20 150 A140 140 0 0 1 300 150 Z"/></clipPath>
+        </defs>
+        <path d="M20 150 A140 140 0 0 1 300 150" fill="none" stroke="#0B2545" stroke-opacity="0.18" stroke-width="16"/>
+        <path d="M20 150 A140 140 0 0 1 143 12" fill="none" stroke="#3E6D9C" stroke-width="16" stroke-linecap="round"/>
+        <g font-family="IBM Plex Mono" font-size="10.5" fill="#5c6b78">
+          <text x="14" y="168">ADVISORY</text>
+          <text x="120" y="10">FRACTIONAL</text>
+          <text x="230" y="30">INTERIM</text>
+          <text x="278" y="168" text-anchor="end">FULL-TIME</text>
+        </g>
+        <line x1="160" y1="150" x2="104" y2="34" stroke="#C4571F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="160" cy="150" r="7" fill="#12181F"/>
+        <circle cx="104" cy="34" r="4.5" fill="#C4571F"/>
+      </svg>
+      <div class="dial-caption"><b>Set to Fractional.</b> Senior-level marketing direction on the days you need it — usually the equivalent of 1–3 days a week, scoped to what the business actually requires right now.</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="frame">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">What I do</div>
+        <h2>One CMO. Four ways to put the role to work.</h2>
+      </div>
+      <div class="section-num">01 / SERVICES</div>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <div class="tag">STRATEGY</div>
+        <h3>Marketing leadership</h3>
+        <p>I sit at the leadership table, build the plan, and own the numbers — brand, demand, and pipeline, tied to revenue the business can actually point to.</p>
+      </div>
+      <div class="service">
+        <div class="tag">EXECUTION</div>
+        <h3>Team building &amp; mentorship</h3>
+        <p>Most companies at this stage have talent but no structure. I build the team, the processes, and the muscle memory, then hand off a function that runs without me.</p>
+      </div>
+      <div class="service">
+        <div class="tag">SYSTEMS</div>
+        <h3>MarTech &amp; demand generation</h3>
+        <p>HubSpot, Salesforce, ABM programs, event strategy — built from scratch or untangled from whatever's currently held together with duct tape.</p>
+      </div>
+      <div class="service">
+        <div class="tag">TRANSITION</div>
+        <h3>Interim &amp; project leadership</h3>
+        <p>Between CMOs, mid-rebrand, or heading into a growth stage that needs a steady hand for a defined stretch — I step in, run it, and step back out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof" class="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Track record</div>
+        <h2>Numbers from companies I've actually run marketing for.</h2>
+      </div>
+      <div class="section-num">02 / PROOF</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">2X</div>
+        <div class="label">Revenue growth during my tenure leading marketing at a global industrial distributor</div>
+      </div>
+      <div class="stat">
+        <div class="num">439%</div>
+        <div class="label">LinkedIn following growth — 19K to 102,500+ followers, same company</div>
+      </div>
+      <div class="stat">
+        <div class="num">70X</div>
+        <div class="label">Conference ROI on a 3-year user conference series ($681K spend → $48M pipeline)</div>
+      </div>
+      <div class="stat">
+        <div class="num">$700K→$4M</div>
+        <div class="label">Year-over-year revenue growth via ABM and cross-functional alignment at an early-stage company</div>
+      </div>
+    </div>
+    <p class="proof-note">These are real, verified results across four companies over 16+ years — not a composite. Happy to walk through the specifics, and the context, in a conversation.</p>
+  </div>
+</section>
+
+<section id="about" class="frame">
+  <div class="wrap about">
+    <div class="about-photo">
+      <div class="cap">RICH WITMER — FOUNDER, FRACTIONAL CMO</div>
+    </div>
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>16+ years building marketing functions that outlast the engagement.</h2>
+      <p>I'm Rich Witmer, founder of Witmer Integrated Marketing LLC, based in Houston. I've spent my career inside industrial, manufacturing, SaaS, and distribution companies — not consulting from the outside, but running the marketing function from the inside, reporting to the CEO, and owning the results.</p>
+      <p>I take on a small number of fractional and interim engagements at a time, by design. Every company I work with gets a CMO who's actually paying attention.</p>
+      <ul>
+        <li>Global industrial distribution &amp; manufacturing</li>
+        <li>B2B SaaS &amp; technology</li>
+        <li>Energy, solar &amp; power infrastructure</li>
+        <li>HubSpot &amp; Salesforce MarTech builds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="fit">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Fit check</div>
+        <h2>A fractional CMO makes sense for some companies. Not all of them.</h2>
+      </div>
+      <div class="section-num">03 / FIT</div>
+    </div>
+
+    <div class="fit">
+      <div class="yes">
+        <h4>Good fit</h4>
+        <p>$5M–$100M revenue, no current marketing leader, or a team that needs direction more than headcount. Ready to commit to a real strategy, not just more content.</p>
+      </div>
+      <div class="yes">
+        <h4>Also a good fit</h4>
+        <p>Between CMOs, mid-transition, or heading into a launch, rebrand, or growth push that needs senior direction for a defined period.</p>
+      </div>
+      <div class="no">
+        <h4>Not a fit yet</h4>
+        <p>Pre-revenue with no go-to-market clarity, or looking for someone to execute tactics with no seat at the leadership table. That's a different hire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-inner">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let's talk about what your marketing function actually needs.</h2>
+      <p>No pitch deck required. A 30-minute conversation is usually enough to know if this is worth pursuing further.</p>
+      <div class="direct" style="margin-top:28px;">Prefer email? <a href="mailto:rich@witmerintegrated.com">rich@witmerintegrated.com</a></div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Thanks — this form needs to be connected to an email service (e.g. Netlify Forms) before it will actually send.');">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div class="field">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="message">What's going on with marketing right now?</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <div class="submit-row">
+        <button class="btn-submit" type="submit">Send it</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
+    <div>Fractional CMO Services</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
