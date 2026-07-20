@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Witmer Integrated Marketing LLC — Fractional CMO &amp; B2B Marketing Leadership</title>
 <meta name="description" content="Rich Witmer, Fractional CMO. 16+ years driving revenue-tied marketing for B2B industrial, distribution, and technology companies.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="canonical" href="https://witmer.marketing/">
+<link rel="icon" href="/favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -179,6 +180,22 @@
   }
   .achieve-item .dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex:none; margin-top:6px;}
   .achieve-item b{color:var(--navy);}
+
+  /* ---------- case study teaser (homepage) ---------- */
+  .teaser-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .teaser-card{
+    display:block; text-decoration:none; color:inherit;
+    background:#fff; border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .teaser-card:hover{transform:translateY(-3px); box-shadow:0 8px 24px rgba(11,37,69,0.12);}
+  .teaser-img{
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg, var(--navy) 0%, #1c3a5e 100%);
+  }
+  .teaser-card h3{font-family:var(--display); font-size:17px; color:var(--navy); margin:18px 20px 8px;}
+  .teaser-card p{font-size:13.5px; color:var(--muted); margin:0 20px 20px; line-height:1.6;}
+  @media (max-width:800px){ .teaser-grid{grid-template-columns:1fr;} }
 
   /* ---------- contact ---------- */
   .contact-band{background:var(--cream); padding:56px 0;}
@@ -390,7 +407,34 @@
   </div>
 </section>
 
-<div class="contact-band">
+<section id="case-teaser" style="background:var(--cream); padding:64px 0;">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:32px;">
+      <span class="eyebrow">Case Studies</span>
+      <h2>The full story behind the numbers.</h2>
+    </div>
+    <div class="teaser-grid">
+      <a class="teaser-card" href="case-studies.html">
+        <div class="teaser-img"></div>
+        <h3>Case Study Title</h3>
+        <p>A short preview of the challenge and outcome will go here.</p>
+      </a>
+      <a class="teaser-card" href="case-studies.html">
+        <div class="teaser-img"></div>
+        <h3>Case Study Title</h3>
+        <p>A short preview of the challenge and outcome will go here.</p>
+      </a>
+      <a class="teaser-card" href="case-studies.html">
+        <div class="teaser-img"></div>
+        <h3>Case Study Title</h3>
+        <p>A short preview of the challenge and outcome will go here.</p>
+      </a>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="case-studies.html" style="font-size:14px; font-weight:600; color:var(--navy); text-decoration:none; border-bottom:1px solid var(--gold);">See all case studies →</a>
+    </div>
+  </div>
+</section>
   <div class="wrap contact-flex">
     <div class="loc">Houston, Texas · Available for U.S. engagements</div>
     <a class="talk-btn" href="#contact-form">Let's Talk <span class="talk-circle">↙</span></a>

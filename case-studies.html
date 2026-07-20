@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Studies — Witmer Integrated Marketing LLC</title>
+<meta name="description" content="Case studies and results from Rich Witmer's fractional CMO engagements across B2B industrial, distribution, and technology companies.">
+<link rel="canonical" href="https://witmer.marketing/case-studies.html">
+<link rel="icon" href="/favicon.ico">
+<meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,12 +24,29 @@
   .nav{display:flex; justify-content:space-between; align-items:center;}
   .logo{font-family:var(--display); font-weight:700; font-size:19px; color:var(--navy); text-decoration:none;}
   .back{font-size:14px; font-weight:500; color:var(--navy); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px;}
-  main{padding:90px 0; text-align:center;}
+
+  .page-head{padding:64px 0 20px; text-align:center;}
   .eyebrow{font-size:12.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-soft);}
-  h1{font-family:var(--display); font-weight:700; font-size:clamp(30px,4vw,42px); color:var(--navy); margin:16px 0 18px;}
-  p{color:var(--muted); font-size:16px; max-width:52ch; margin:0 auto 32px;}
-  .btn{display:inline-block; background:var(--navy); color:#fff; text-decoration:none; font-size:14px; font-weight:600; padding:13px 26px; border-radius:999px;}
-  .btn:hover{background:var(--gold);}
+  h1{font-family:var(--display); font-weight:700; font-size:clamp(28px,4vw,40px); color:var(--navy); margin:14px 0 12px;}
+  .page-head p{color:var(--muted); font-size:16px; max-width:56ch; margin:0 auto;}
+
+  main{padding:44px 0 90px;}
+  .cs-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px 32px;}
+  .cs-card{display:block;}
+  .cs-img{
+    aspect-ratio:16/10; border-radius:4px;
+    background:linear-gradient(135deg, var(--navy) 0%, #1c3a5e 100%);
+    display:block; text-decoration:none;
+  }
+  .cs-title{
+    font-family:var(--display); font-size:21px; font-weight:700; color:var(--navy);
+    margin:18px 0 8px; text-decoration:none; display:block;
+  }
+  .cs-title:hover{color:var(--gold);}
+  .cs-card p{color:var(--muted); font-size:14.5px; margin:0;}
+
+  @media (max-width:760px){ .cs-grid{grid-template-columns:1fr;} }
+
   footer{background:var(--navy); color:#B9C4D1; padding:26px 0; font-size:12.5px;}
   .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
@@ -37,12 +58,37 @@
     <a class="back" href="index.html">← Back to home</a>
   </div>
 </header>
-<main class="wrap">
+
+<div class="page-head wrap">
   <div class="eyebrow">Case Studies</div>
-  <h1>Detailed case studies are on the way.</h1>
-  <p>In the meantime, a handful of results are outlined on the home page — and I'm happy to walk through the full story behind any of them.</p>
-  <a class="btn" href="index.html#contact-form" style="margin-bottom:60px; display:inline-block;">Let's talk</a>
+  <h1>Results, not just claims.</h1>
+  <p>A closer look at the strategy, execution, and outcomes behind a few recent engagements.</p>
+</div>
+
+<main class="wrap">
+  <div class="cs-grid">
+
+    <div class="cs-card">
+      <a class="cs-img" href="case-study-1.html" aria-label="Read case study 1"></a>
+      <a class="cs-title" href="case-study-1.html">Case Study Title</a>
+      <p>A short paragraph summarizing the challenge, approach, and outcome will go here once the content is added.</p>
+    </div>
+
+    <div class="cs-card">
+      <a class="cs-img" href="case-study-2.html" aria-label="Read case study 2"></a>
+      <a class="cs-title" href="case-study-2.html">Case Study Title</a>
+      <p>A short paragraph summarizing the challenge, approach, and outcome will go here once the content is added.</p>
+    </div>
+
+    <div class="cs-card">
+      <a class="cs-img" href="case-study-3.html" aria-label="Read case study 3"></a>
+      <a class="cs-title" href="case-study-3.html">Case Study Title</a>
+      <p>A short paragraph summarizing the challenge, approach, and outcome will go here once the content is added.</p>
+    </div>
+
+  </div>
 </main>
+
 <footer>
   <div class="wrap footer-inner">
     <div>© <span id="year"></span> Witmer Integrated Marketing LLC — Houston, TX</div>
