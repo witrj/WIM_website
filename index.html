@@ -54,7 +54,7 @@
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; min-height:40px;}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding-top:18px; padding-bottom:18px; min-height:40px;}
   .logo{font-family:var(--display); font-weight:700; font-size:19px; color:var(--navy);}
   nav ul{list-style:none; display:flex; gap:30px; margin:0; padding:0; font-size:14px; font-weight:500;}
   nav ul a{text-decoration:none; color:var(--ink); border-bottom:1px solid transparent; padding-bottom:3px; transition:border-color .2s, color .2s;}
@@ -122,6 +122,15 @@
     border:2px solid var(--gold);
     margin-left:auto;
     overflow:hidden;
+  }
+
+  @media (max-width:600px){
+    .hero{padding:48px 0 0;}
+    .hero-top{flex-direction:column; align-items:flex-start; gap:20px;}
+    .hero-contact{text-align:left;}
+    .hero-main{grid-template-columns:1fr; margin-top:20px; padding:32px 0 44px; gap:20px;}
+    .hero-main > div:first-child{order:2;}
+    .avatar{order:1; margin-left:0; width:110px; height:110px;}
   }
   .avatar img{
     width:100%; height:100%; object-fit:cover; display:block;
@@ -307,7 +316,6 @@
         <div class="name">Rich Witmer</div>
         <div><a href="mailto:rich@witmer.marketing">rich@witmer.marketing</a></div>
         <div><a href="https://linkedin.com/in/richwitmer" target="_blank" rel="noopener">linkedin.com/in/richwitmer</a></div>
-        <div>Houston, Texas</div>
       </div>
     </div>
 
@@ -549,6 +557,15 @@
         menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function () {
+      const currentScrollY = window.scrollY;
+      if (mobileNav.classList.contains('open') && Math.abs(currentScrollY - lastScrollY) > 10) {
+        mobileNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      lastScrollY = currentScrollY;
+    }, { passive: true });
   }
 </script>
 </body>
