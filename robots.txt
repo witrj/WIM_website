@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://witmer.marketing/sitemap.xml
