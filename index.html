@@ -505,8 +505,8 @@
 <section id="contact-form">
   <div class="wrap">
     <div class="form-head">
-      <h2>Ready to grow?</h2>
-      <p>Contact me for a 20- or 30-minute introductory conversation.</p>
+      <h2 id="formHeading">Ready to grow?</h2>
+      <p id="formSubhead">Tell me a bit about your business, and I'll follow up to schedule a 30-minute introductory call.</p>
     </div>
     <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
@@ -518,7 +518,7 @@
       <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
       <div class="field"><label for="message">What's going on with your marketing right now?</label><textarea id="message" name="message"></textarea></div>
       <button class="btn-submit" type="submit">Contact Me</button>
-      <p id="formStatus" style="display:none; font-size:14px; color:var(--navy); margin:4px 0 0;"></p>
+      <p id="formStatus" style="display:none; font-size:15px; color:var(--navy); margin:8px 0 0; text-align:center; line-height:1.6;"></p>
     </form>
   </div>
 </section>
@@ -526,6 +526,8 @@
 <script>
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+  const formHeading = document.getElementById('formHeading');
+  const formSubhead = document.getElementById('formSubhead');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -538,8 +540,10 @@
         .then(() => {
           contactForm.reset();
           contactForm.querySelectorAll('.field, .btn-submit').forEach(el => el.style.display = 'none');
+          formHeading.textContent = "Thanks for reaching out.";
+          formSubhead.textContent = "The next step is a 30-minute introductory call — I'll follow up shortly to find a time that works.";
           formStatus.style.display = 'block';
-          formStatus.textContent = "Thanks — I'll be in touch shortly.";
+          formStatus.textContent = "I'm looking forward to learning more about your business and where a fractional CMO could help.";
         })
         .catch(() => {
           formStatus.style.display = 'block';
